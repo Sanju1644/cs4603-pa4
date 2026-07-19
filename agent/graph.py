@@ -14,7 +14,6 @@ from __future__ import annotations
 
 import asyncio
 import os
-import sys
 import threading
 
 from langchain_core.messages import HumanMessage, SystemMessage
@@ -111,8 +110,8 @@ def load_mcp_tools(server_path: str | None = None):
     If MCP_SERVER_URL is set, connects over streamable HTTP instead (Bonus C
     groundwork). Otherwise spawns the given/default server script over stdio.
     """
-    from langchain_mcp_adapters.client import MultiServerMCPClient
     import mcp.client.stdio as _stdio_mod
+    from langchain_mcp_adapters.client import MultiServerMCPClient
 
     # CRITICAL: mcp's stdio_client() binds errlog=sys.stderr as a *default
     # parameter value*, evaluated once when mcp.client.stdio is first
