@@ -1,0 +1,2 @@
+# Bonus C — Databricks App config for the standalone MCP server.
+command: ["python", "deployment/mcp_app/app.py"]
